@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.wangjy.jetpackdemo.MainFragment"
+        android:label="main"
+        tools:layout="@layout/main" >
+        <action
+            android:id="@+id/action_mainFragment_to_blankFragment"
+            app:exitAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_right"
+            app:destination="@id/blankFragment" />
+
+        <argument
+            android:name="age"
+            app:argType="integer"
+            android:defaultValue="1"
+            />
+
+        <action
+            android:id="@+id/action_mainFragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.wangjy.jetpackdemo.MessageFragment"
+        android:label="message"
+        tools:layout="@layout/message" />
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.wangjy.jetpackdemo.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.jackwang.com" />
+    </fragment>
+</navigation>
