@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.wangjy.jetpackdemo.MainFragment"
-        android:label="main"
+        android:label="首页"
         tools:layout="@layout/main" >
         <action
             android:id="@+id/action_mainFragment_to_blankFragment"
@@ -30,12 +30,12 @@
     <fragment
         android:id="@+id/messageFragment"
         android:name="com.wangjy.jetpackdemo.MessageFragment"
-        android:label="message"
+        android:label="消息"
         tools:layout="@layout/message" />
     <fragment
         android:id="@+id/blankFragment"
         android:name="com.wangjy.jetpackdemo.BlankFragment"
-        android:label="fragment_blank"
+        android:label="空页面"
         tools:layout="@layout/fragment_blank" >
 
         <deepLink
