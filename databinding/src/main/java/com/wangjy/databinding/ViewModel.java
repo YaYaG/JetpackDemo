@@ -4,11 +4,11 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
 import androidx.databinding.BindingAdapter;
+import androidx.databinding.ObservableField;
 
 /**
  * 姓名: Jack
@@ -20,10 +20,11 @@ public class ViewModel {
     public String name;
     public int age;
     public String imgUrl;
+    public final ObservableField<String> firstName = new ObservableField<>();
 
 
     public void click(View view) {
-        Toast.makeText(view.getContext(), "hhh", Toast.LENGTH_SHORT).show();
+        firstName.set("改变后的名字");
     }
 
     @BindingAdapter("app:hideIfZero")

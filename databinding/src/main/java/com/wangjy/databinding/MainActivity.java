@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         viewModel.name = "hello";
         viewModel.age = 12;
         viewModel.imgUrl = "https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1035415831,1465727770&fm=26&gp=0.jpg";
+        viewModel.firstName.set("我的名字");
 
         activityMainBinding.setViewmodel(viewModel);
 
