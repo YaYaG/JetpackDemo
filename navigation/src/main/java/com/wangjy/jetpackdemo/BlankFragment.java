@@ -62,6 +62,13 @@ public class BlankFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+//        requireActivity().getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+//            @Override
+//            public void handleOnBackPressed() {
+//                Toast.makeText(getContext(), "返回", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     @Override
