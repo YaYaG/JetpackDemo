@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         viewModel.age = 12;
         viewModel.imgUrl = "https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1035415831,1465727770&fm=26&gp=0.jpg";
         viewModel.firstName.set("我的名字");
-
         activityMainBinding.setViewmodel(viewModel);
 
         RecyclerView recyclerView = activityMainBinding.recyclerView;
@@ -40,5 +39,7 @@ public class MainActivity extends AppCompatActivity {
         }
         MyViewAdapter myViewAdapter = new MyViewAdapter(this, list);
         recyclerView.setAdapter(myViewAdapter);
+
+        getLifecycle().addObserver(new MyObserver());
     }
 }

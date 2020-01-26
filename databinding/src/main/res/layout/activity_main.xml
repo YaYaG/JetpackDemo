@@ -51,13 +51,24 @@
             app:placeHolder="@{@drawable/ic_launcher_background}" />
 
 
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:checked="@{viewmodel.cb}"
+            android:onCheckedChanged="@{(cb,isChecked)->viewmodel.checkboxChange(isChecked)}"
+            />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img" />
+            app:layout_constraintTop_toBottomOf="@+id/checkbox" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

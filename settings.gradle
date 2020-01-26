@@ -1,2 +1,2 @@
-include ':navigation', ':databinding'
+include ':navigation', ':databinding', ':room'
 rootProject.name='JetpackDemo'

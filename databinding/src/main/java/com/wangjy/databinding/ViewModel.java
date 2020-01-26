@@ -1,6 +1,7 @@
 package com.wangjy.databinding;
 
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -8,6 +9,7 @@ import android.widget.ProgressBar;
 import com.bumptech.glide.Glide;
 
 import androidx.databinding.BindingAdapter;
+import androidx.databinding.ObservableBoolean;
 import androidx.databinding.ObservableField;
 
 /**
@@ -21,10 +23,12 @@ public class ViewModel {
     public int age;
     public String imgUrl;
     public final ObservableField<String> firstName = new ObservableField<>();
+    public final ObservableBoolean cb = new ObservableBoolean();
 
 
     public void click(View view) {
-        firstName.set("改变后的名字");
+//        firstName.set("改变后的名字");
+        cb.set(!cb.get());
     }
 
     @BindingAdapter("app:hideIfZero")
@@ -38,6 +42,9 @@ public class ViewModel {
         Glide.with(imageView.getContext()).load(url).placeholder(placeHolder).into(imageView);
     }
 
-
+    public void checkboxChange(boolean isCheck){
+        Log.i("---",isCheck+"");
+        firstName.set("改变后的名字");
+    }
 
 }
