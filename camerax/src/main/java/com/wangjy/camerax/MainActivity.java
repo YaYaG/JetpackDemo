@@ -58,7 +58,9 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
 
 
     private void startCamera() {
-        PreviewConfig previewConfig = new PreviewConfig.Builder().build();
+        PreviewConfig previewConfig = new PreviewConfig.Builder()
+//                .setTargetResolution(new Size(10,10))
+                .build();
 
         Preview preview = new Preview(previewConfig);
 
